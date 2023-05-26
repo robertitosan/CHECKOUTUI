@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Payment gateway form</title>
+		<link rel="stylesheet" type="text/css" href="payment.css">
+		<script type="text/javascript" src="paymentback.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="left">
+					<h3>BILLING ADDRESS</h3>
+					<form>
+						Full name
+						<input type="text" name="" placeholder="Enter name">
+						Email
+						<input type="text" name="" placeholder="Enter email">
+						Address
+						<input type="text" name="" placeholder="Enter address">
+						City
+						<input type="text" name="" placeholder="Enter city">
+						<div id="zip">
+							<label>
+								State
+								<select>
+									<option>Choose state...</option>
+									<option>California</option>
+									<option>Texas</option>
+									<option>Luisiana</option>
+									<option>Kentucky</option>
+								</select>
+							</label>
+							<label>
+								Zip code
+								<input type="number" name="" placeholder="Zip code">
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="right">
+					<h3>PAYMENT</h3>
+					<form>
+						Credit Card Number
+						<input type="text" name="" maxlength="19" id="ccn" oninput="confirmarcc()" placeholder="CCC">
+						<p id="validccn"></p>
+						<tr>
+							<td><label for="expiry_day">Expiry date(Month/Year):<span id="imp">*</span></label></td>
+							<td>
+								<div class="expirydate">
+									<select id="expiry_month" tabindex="4">
+										<option value="01">January</option>
+										<option value="02">February</option>
+										<option value="03">March</option>
+										<option value="04">April</option>
+										<option value="05">May</option>
+										<option value="06">June</option>
+										<option value="07">July</option>
+										<option value="08">August</option>
+										<option value="09">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+									<select id="expiry_year" tabindex="5">
+										<optgroup label="Year">
+											<script>generate_year();</script>
+										</optgroup>
+									</select>
+								</div>
+							</td>
+						</tr>
+					</label>
+					<label>
+						CVV
+						<input type="number" name="" maxlength="4" id="cvv" oninput="confirmarcvv()" placeholder="CVV">
+					</label>
+					<p id="validcvv"></p>
+					<p id="success">
+				</p>
+				</div>
+			</form>
+			<input type="submit" name="" value="Proceed to Checkout" class="submit-button" onclick="submit()">
+				
+		</div>
+
+	</header>
+
+</body>
+</html>
